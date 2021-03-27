@@ -1,0 +1,5 @@
+hints {
+  uncategorized {
+    hint ("오늘의 TV에서 오늘 발화 알려줘")
+  }
+}

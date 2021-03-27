@@ -1,0 +1,36 @@
+layout-macro-def (program-Table){
+	params{
+		param (TableInfo){
+			type(TableInfo)
+			min (Required)
+			max (Many)
+		}
+	}
+	
+	content{
+		section{
+			content{
+				single-line{
+					image{
+						url{
+							template ("#{value(TableInfo.programImageUrl)}")
+						}
+					}
+					text{
+						value("#{value(TableInfo.channelName)} : #{value(TableInfo.programTime)}")
+						style(Title_XL_Soft)
+					}
+				}divider
+				for-each (TableInfo.temp){
+					as(pn){
+						divider
+						paragraph{
+							value("#{value(pn)}")
+							style(Detail_M)
+						}
+					}
+				}
+			}
+		}
+	}
+}

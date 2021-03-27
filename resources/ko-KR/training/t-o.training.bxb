@@ -1,0 +1,5 @@
+train (t-ov61zw2buc1gkjuu3cn1ev38k) {
+  utterance ("[g:RateInfo] (수요일)[v:time.DayOfWeek:Wednesday]날 (드라마)[v:ProgramGenre:drama] 볼만한거 알려줘")
+  plan (Y2BlkC7ISaxML8ovzUvRK8lPSawMCdMLSixJ9cxLy2dQxCLpnloSUJSfXpSYC1LGII9FCVTePTWvKJVBoCyzTC89NR+oMT8gPzOvhEEIJFKSmZuq55JY6Z8WnpqazcDCwMjAxMAMpBmALAiEAWYgZgLJAAA=)
+  last-modified (1570828967934)
+}

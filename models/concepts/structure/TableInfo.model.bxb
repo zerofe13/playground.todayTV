@@ -1,0 +1,40 @@
+structure (TableInfo) {
+  description (채널 편성표 호출에 따른 액션의 결과값)
+
+  property (programImageUrl) {
+    type (ProgramImageUrl)
+    min (Optional) max (One)
+  }
+
+  property (channelName) {
+    type (ChannelName)
+    min (Optional) max (One)
+  }
+
+  // property (programName) {
+  //   type (ProgramName)
+  //   min (Optional) max (One)
+  // }
+
+  property (first){
+    type (viv.core.Text)
+    min (Optional) max (Many)
+    visibility (Private)
+  }
+
+  property (temp) {
+    type (viv.core.Text)
+    min (Optional) max (Many)
+    visibility (Private)
+  }
+
+  property (programTime) {
+    type (ProgramTime)
+    min (Optional) max (One)
+  }
+
+  // property (dateTime) {
+  //   type (time.DateTimeExpression)
+  //   min (Optional) max (One)
+  // }
+}

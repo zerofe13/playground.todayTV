@@ -1,0 +1,13 @@
+action (GetProgramInfo) {
+	description (프로그램 정보에 대한 액션 당담)
+	
+	type(Search)
+	
+	collect {
+		input (programName) {
+			type (ProgramName)
+			min (Required) max (One)
+		}
+	}
+	output (ProgramInfo)
+}

@@ -1,0 +1,4 @@
+text (ProgramImageUrl) {
+  description (이미지정보 URL)
+  extends (viv.core.Url)
+}

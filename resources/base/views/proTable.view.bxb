@@ -1,0 +1,68 @@
+result-view{
+	match : TableInfo(TableInfos)
+	message {
+		template ("#{value(TableInfos.channelName)}의 편성표 입니다.") // 맨위 나오는 텍스트
+	}
+	
+	render{
+		layout-match (TableInfos) {
+			mode (Details)
+		}
+	}
+	
+	conversation-drivers{   //follow up
+		conversation-driver{
+			if (TableInfos.channelName == 'SBS'){
+			template ("KBS2에서 뭐해")
+			}else-if (TableInfos.channelName == 'KBS2'){
+			template ("SBS에서 뭐해")	
+			}else-if (TableInfos.channelName == 'MBC'){
+			template ("KBS2에서 뭐해")	
+			}else-if (TableInfos.channelName == 'tvN'){
+			template ("KBS2에서 뭐해")	
+			}else-if (TableInfos.channelName == 'JTBC'){
+			template ("KBS2에서 뭐해")
+			}
+		}
+		conversation-driver{
+			if (TableInfos.channelName == 'SBS'){
+			template (" MBC에서 뭐해")
+			}else-if (TableInfos.channelName == 'KBS2'){
+			template ("MBC에서 뭐해")	
+			}else-if (TableInfos.channelName == 'MBC'){
+			template ("SBS에서 뭐해")	
+			}else-if (TableInfos.channelName == 'tvN'){
+			template ("SBS에서 뭐해")	
+			}else-if (TableInfos.channelName == 'JTBC'){
+			template ("SBS에서 뭐해")
+			}
+		}
+		conversation-driver{
+			if (TableInfos.channelName == 'SBS'){
+			template ("JTBC에서 뭐해")
+			}else-if (TableInfos.channelName == 'KBS2'){
+			template ("JTBC에서 뭐해")	
+			}else-if (TableInfos.channelName == 'MBC'){
+			template ("JTBC에서 뭐해")	
+			}else-if (TableInfos.channelName == 'tvN'){
+			template ("MBC에서 뭐해")	
+			}else-if (TableInfos.channelName == 'JTBC'){
+			template ("MBC에서 뭐해")
+			}
+		}
+		conversation-driver{
+			if (TableInfos.channelName == 'SBS'){
+			template ("tvN에서 뭐해")
+			}else-if (TableInfos.channelName == 'KBS2'){
+			template ("tvN에서 뭐해")	
+			}else-if (TableInfos.channelName == 'MBC'){
+			template ("tvN에서 뭐해")	
+			}else-if (TableInfos.channelName == 'tvN'){
+			template ("JTBC에서 뭐해")	
+			}else-if (TableInfos.channelName == 'JTBC'){
+			template ("tvN에서 뭐해")
+			}
+		}
+		
+	}
+}

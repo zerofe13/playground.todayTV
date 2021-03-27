@@ -1,0 +1,97 @@
+result-view{
+	match: RateInfo(RateInfos)
+	
+	message {       //dialog
+		template ("결과 값을 확인하여 보세요."){
+			speech ("아래에 결과를 확인해보세요!")
+		}
+	}
+	
+	render{
+		if(size(RateInfos)>1){
+			list-of(RateInfos){
+				header {
+
+         title-area{
+					 halign (Start)
+					 slot2{
+						 single-line{
+							text{
+							value("#{value(RateInfos.dayofweek)}")
+							style(Title_S)
+							}
+							spacer
+							image{
+								url{
+											template ("/images/Section/FRI_Drama.png")
+										}
+							}
+				  	}
+					 }
+				 }
+				}
+				has-details (true)
+				where-each (RateInfo){
+					layout-macro (program-summary){
+						param (RateInfo){
+							expression (RateInfo)
+						}
+					}
+				}
+			}
+		}
+		else-if (size(RateInfos) == 1) {
+			layout-match (RateInfos) {
+				mode (Details)
+			}
+		}
+	}
+	
+	
+	conversation-drivers{   //follow up
+		conversation-driver{
+
+			if (RateInfos.programGenre == 'drama'){
+			template ("예능 중에 볼만한거 있어?")
+
+			}else{
+				template ("드라마중에 볼거 있어?")
+			}
+			
+		}
+		conversation-driver{
+			if(RateInfos.dayofweek == '월'){
+				template ("화요일날 드라마 볼만한거 알려줘")
+			}else-if (RateInfos.dayofweek == '화'){
+					template ("수요일날 드라마 볼만한거 알려줘")
+			}else-if (RateInfos.dayofweek == '수'){
+					template ("목요일날 드라마 볼만한거 알려줘")
+			}else-if (RateInfos.dayofweek == '목'){
+					template ("금요일날 드라마 볼만한거 알려줘")
+			}else-if (RateInfos.dayofweek == '금'){
+					template ("토요일날 드라마 볼만한거 알려줘")
+			}else-if (RateInfos.dayofweek == '토'){
+					template ("일요일날 드라마 볼만한거 알려줘")
+			}else-if (RateInfos.dayofweek == '일'){
+					template ("월요일날 드라마 볼만한거 알려줘")
+			}
+		}
+		conversation-driver{
+			if(RateInfos.dayofweek == '월'){
+				template ("화요일날 예능 볼만한거 알려줘")
+			}else-if (RateInfos.dayofweek == '화'){
+					template ("수요일날 예능 볼만한거 알려줘")
+			}else-if (RateInfos.dayofweek == '수'){
+					template ("목요일날 예능 볼만한거 알려줘")
+			}else-if (RateInfos.dayofweek == '목'){
+					template ("금요일날 예능 볼만한거 알려줘")
+			}else-if (RateInfos.dayofweek == '금'){
+					template ("토요일날 예능 볼만한거 알려줘")
+			}else-if (RateInfos.dayofweek == '토'){
+					template ("일요일날 예능 볼만한거 알려줘")
+			}else-if (RateInfos.dayofweek == '일'){
+					template ("월요일날 예능 볼만한거 알려줘")
+			}
+		}
+	}
+}

@@ -1,0 +1,81 @@
+layout {
+	match: TableInfo (TableInfo)
+	mode (Details)
+	
+	content {
+		section{
+			content{
+				
+				// hbox{
+				// 	content{
+				// 		vbox{
+				// 			halign (End)
+				// 			content{
+				// 					text{
+				// 						value("    ")
+				// 						style(Detail_L)
+				// 					}
+				// 			}
+				// 		}
+				// 		vbox{
+				// 			halign (End)
+				// 			valign (Bottom)
+				// 			content{
+				// 				single-line{
+				// 					text{
+				// 						value("#{value(TableInfo.programTime)}")
+				// 						style(Detail_L)
+				// 					}
+				// 					spacer
+				// 					image{
+				// 						style(Title_M)
+
+				// 						url{
+				// 							template ("#{value(TableInfo.programImageUrl)}")
+				// 						}
+				// 					}
+				// 				}
+				// 			}
+				// 		}
+				// 	}
+				// }
+				title-area{
+					halign (End)
+					slot2{
+						single-line{
+							text{
+							value("#{value(TableInfo.programTime)}")
+							style(Detail_L)
+							}
+							image{
+								url{
+											template ("#{value(TableInfo.programImageUrl)}")
+										}
+							}
+				  	}
+					}
+				}
+				divider
+				single-line{
+					text{
+						value("#{value(TableInfo.first)}")
+						color (Green)
+						style(Detail_L)
+						
+					}
+				}
+				
+				divider
+				for-each (TableInfo.temp){
+					as (temp){
+						divider
+						paragraph{
+							value("#{value(temp)}")
+							style(Detail_L_Soft)
+						}
+					}
+				}
+			}
+		}
+	}
+}

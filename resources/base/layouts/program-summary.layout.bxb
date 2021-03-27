@@ -1,0 +1,49 @@
+layout-macro-def (program-summary){
+	params{
+		param (RateInfo){
+			type(RateInfo)
+			min (Required)
+			max (Many)
+		}
+	}
+	
+	content{
+		thumbnail-card{
+			image-url ("#{value(RateInfo.programImageUrl)}")
+			image-position (End)
+			
+			title-area{
+				halign (Start)
+				slot1{
+					single-line{
+						text{
+						style(Title_S)
+						value("#{value(RateInfo.programName)}")
+					}
+					}
+			
+				}
+				slot2{
+					single-line{
+						text{
+								color (Amber)
+							value("#{value(RateInfo.programTime)}")
+							style(Title_XS)
+					}
+				}
+
+				}
+				
+				slot3{
+					single-line{
+						text{
+							color (Red)
+							value("최근 시청률 : #{value(RateInfo.programRate)}")
+							style(Title_XS)
+						}
+					}
+				}
+			}
+		}
+	}
+}

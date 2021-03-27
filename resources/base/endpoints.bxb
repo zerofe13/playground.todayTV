@@ -1,0 +1,18 @@
+endpoints {
+  action-endpoints {
+    action-endpoint (GetProgramInfo) {
+      accepted-inputs (programName)
+      local-endpoint ("GetProgramInfo.js")
+    }
+
+    action-endpoint (GetProgramRate) {
+      accepted-inputs (dateTime, programGenre, point)
+      local-endpoint ("GetProgramRate.js")
+    }
+
+    action-endpoint (GetProgramTable) {
+      accepted-inputs (dateTime, channelName, point)
+      local-endpoint ("GetProgramTable.js")
+    }
+  }
+}

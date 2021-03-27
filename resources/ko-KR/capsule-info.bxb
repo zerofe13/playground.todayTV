@@ -1,0 +1,19 @@
+capsule-info {
+  display-name (오늘의 TV)       //사용자에게 보이는 캡슐이름
+  developer-name (오늘의 TV)      //개발자 이름 , 팀이름
+  icon-asset (/images/icons/logo.png)             //로고 경로, 200 x 200
+  description ("__DESCRIPTION__")     //캡슐 기능에 대한 간단한 설명
+  search-keywords{          //마켓플레이스에서 검색 키워드 10개까지
+    keyword (TV)
+    keyword (오늘의 TV)
+    keyword (편성표)
+    keyword (TV 추천)
+    keyword (오늘의)
+  }
+  dispatch-name (오늘의 TV)
+  dispatch-aliases{
+    alias (오늘의 티비)
+  }
+  // website-url (https://example.com/)
+  // terms-url (https://example.com/terms-of-use/)
+}

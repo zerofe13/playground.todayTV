@@ -1,0 +1,5 @@
+enum (ProgramGenre) {
+  description (장르 구분)
+  symbol (drama)
+  symbol (entertainment)
+}

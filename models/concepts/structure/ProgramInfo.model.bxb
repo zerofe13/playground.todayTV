@@ -1,0 +1,32 @@
+structure (ProgramInfo) {
+  description (프로그램 정보 요청에 따른 액션의 결과값)
+  property (programName) {
+    type (ProgramName)
+    min (Optional) max (One)
+  }
+
+  property (programTime) {
+    type (ProgramTime)
+    min (Optional) max (One)
+  }
+
+  property (programImageUrl) {
+    type (ProgramImageUrl)
+    min (Optional) max (One)
+  }
+
+  property (programIntro) {
+    type (ProgramIntro)
+    min (Optional) max (One)
+  }
+
+  property (programCast) {
+    type (ProgramCast)
+    min (Optional) max (One)
+  }
+
+  property (programStaff) {
+    type (ProgramStaff)
+    min (Optional) max (One)
+  }
+}

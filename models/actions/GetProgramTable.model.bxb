@@ -1,0 +1,31 @@
+action (GetProgramTable) {
+	description (채널별 프로그램 편성표에 대한 액션)
+	
+	type(Search)
+	
+	collect {
+		input (dateTime) {
+			type (time.DateTimeExpression)
+		}
+		
+		input (channelName) {
+			type (ChannelName)
+			min (Required) max (One)
+		}
+		
+		input (point) {
+			type (geo.GeoPoint)
+			min (Required) max (One)
+			
+			default-init{     //만약 데이터가 현재 없다면
+				if($user.currentLocation.$exists){    //유저의 현재 로케이션 정보 가져와서 데이터 사용
+					intent{
+						goal:geo.GeoPoint
+						value-set : geo.CurrentLocation{$expr($user.currentLocation)}
+					}
+				}
+			}
+		}
+	}
+	output (TableInfo)
+}

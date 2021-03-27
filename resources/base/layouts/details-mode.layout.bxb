@@ -1,0 +1,64 @@
+layout {
+	match: RateInfo (RateInfo)
+	mode (Details)
+	
+	content{
+		section{
+			content{
+				image{
+					aspect-ratio(1:1)
+					object-fit (Contain)
+					url("#{value(RateInfo.programImageUrl)}")
+				}
+			}
+		}
+		section{
+			title(소개)
+			content{
+				paragraph{
+					value("#{value(RateInfo.programIntro)}")
+					style(Detail_L)
+				}
+			}
+		}
+		section{
+			title(출연진)
+			content{
+				partitioned{
+					content{
+						paragraph{
+							value("#{value(RateInfo.programCast)}")
+							style(Detail_L)
+						}
+					}
+				}
+			}
+		}
+		section{
+			title(편성)
+			content{
+				partitioned{
+					content{
+						paragraph{
+							value("#{value(RateInfo.programTime)}")
+							style(Detail_L)
+						}
+					}
+				}
+			}
+		}
+		section{
+			title(제작진)
+			content{
+				partitioned{
+					content{
+						paragraph{
+							value("#{value(RateInfo.programStaff)}")
+							style(Detail_L)
+						}
+					}
+				}
+			}
+		}
+	}
+}

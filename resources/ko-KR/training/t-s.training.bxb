@@ -1,0 +1,5 @@
+train (t-sxi7ryi7bo7ltsoa13j1wtogd) {
+  utterance ("[g:RateInfo] (예능)[v:ProgramGenre:entertainment] 중에 볼만한거 있어?")
+  plan (Y2BhkC7ISaxML8ovzUvRK8lPSawMCdMLSixJ9cxLy2dQxCLpnloSUJSfXpSYC1LGII9FCVTePTWvKJVBoCyzTC89NR+oMT8gPzOvhIGZgZGBCUgyAGkQhAAmCAYA)
+  last-modified (1570828249279)
+}
